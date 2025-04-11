@@ -6,15 +6,15 @@ hypen_e_dot = '-e .'
 def get_requirments(file_path:str)->List[str]:
     """ this func will return list of requirments
     """
-    requirments=[]
+    requirements=[]
     with open(file_path) as file_obj:
-        requirments=file_obj.readlines()
-        requirments=[req.replace("\n","") for req in requirments]
+        requirements=file_obj.readlines()
+        requirements=[req.replace("\n","") for req in requirements]
 
-        if hypen_e_dot in requirments:
-            requirments.remove(hypen_e_dot)
+        if hypen_e_dot in requirements:
+            requirements.remove(hypen_e_dot)
     
-    return requirments
+    return requirements
         
 setup(
     name ="mlproject",
@@ -22,5 +22,5 @@ setup(
     author="Harnaik",
     author_email="harnaiksahni1024@gmail.com",
     packages = find_packages(),
-    install_requires=get_requirments('requirment.txt')
+    install_requires=get_requirments('requirements.txt')
 )
